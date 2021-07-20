@@ -1,0 +1,45 @@
+:root {
+    --primary-color: #fc8019;
+    --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
+}
+
+.LoginPage {
+    font-family: var(--font);
+}
+
+.LoginPage a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.LoginBox {
+    font-family: var(--font);
+    margin: 2rem 0rem;
+    position: relative;
+}
+
+.LoginBox input {
+    width: 60%;
+    height: 70px;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid lightgrey;
+}
+
+.LoginBox input:focus {
+    outline-width: 0px;
+}
+
+.LoginButton {
+    font-family: var(--font);
+}
+
+.LoginButton button {
+    width: 60%;
+    height: 70px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
