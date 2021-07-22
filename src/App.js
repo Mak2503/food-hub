@@ -1,14 +1,12 @@
 import './index';
-import LoginBox from './pages/Login/LoginBox';
-import LoginButton from './pages/Login/LoginButton';
+import CartEmpty from './pages/Cart/CartEmpty';
 import LoginPage from './pages/Login/LoginPage';
+import SignupPage from './pages/SignUp/SignupPage';
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
-      <LoginBox />
-      <LoginButton />
+      <CartEmpty />
     </div>
   );
 }

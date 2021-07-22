@@ -3,23 +3,23 @@
     --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
 }
 
-.LoginPage {
+.SignupPage {
     font-family: var(--font);
     color: #282c3f;
 }
 
-.LoginPage a {
+
+.SignupPage a {
     text-decoration: none;
     color: var(--primary-color);
 }
 
-.LoginBox {
+.SignupBox {
     font-family: var(--font);
-    margin: 2rem 0rem;
     position: relative;
 }
 
-.LoginBox input {
+.SignupBox input {
     width: 60%;
     height: 70px;
     padding-left: 1rem;
@@ -27,20 +27,21 @@
     border: 1px solid lightgrey;
 }
 
-.LoginBox input:focus {
+.SignupBox input:focus {
     outline-width: 0px;
 }
 
-.LoginButton {
+.SignupButton {
     font-family: var(--font);
 }
 
-.LoginButton button {
+.SignupButton button {
     width: 60%;
     height: 70px;
     font-weight: bold;
     background-color: var(--primary-color);
     border: none;
+    margin: 2rem;
     color: white;
     cursor: pointer;
 }
