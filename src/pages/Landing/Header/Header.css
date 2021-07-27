@@ -1,0 +1,9 @@
+.SearchBox input {
+    width: 20%;
+    display: inline-flexbox;
+}
+
+
+.SearchButton button {
+    display: inline-flexbox;
+}
