@@ -1,6 +1,5 @@
 import React from 'react'
 import SearchBox from './SearchBox'
-import SearchButton from './SearchButton'
 
 class Header extends React.Component {
     constructor(props){
@@ -9,9 +8,9 @@ class Header extends React.Component {
     render(){
         return (
             <div className="Header">
-                <h2>All restaurants delivering to Marathahalli, Bangalore</h2>
+                <h2>All restaurants delivering to  </h2>
                 <p>Set exact location to find the right restaurants near you.</p>
-                <SearchBox /><SearchButton />
+                <SearchBox />
             </div>
         )
     }
