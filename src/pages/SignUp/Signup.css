@@ -3,11 +3,22 @@
     --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
 .SignupPage {
     font-family: var(--font);
     color: #282c3f;
+    margin-left: 20px;
 }
 
+.exit {
+    color: grey;
+    font-size: 30px;
+    margin: 15px;
+    margin-left: 5px;
+}
 
 .SignupPage a {
     text-decoration: none;
@@ -41,7 +52,7 @@
     font-weight: bold;
     background-color: var(--primary-color);
     border: none;
-    margin: 2rem;
     color: white;
     cursor: pointer;
+    margin: 15px 0;
 }

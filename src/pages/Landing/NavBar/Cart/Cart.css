@@ -6,22 +6,27 @@
 .CartEmpty {
     font-family: var(--font);
     color: #535665;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.CartEmpty div {
+.resImg {
     width: 271px;
     height: 256px;
     background-image: url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0);
     background-repeat: no-repeat;
     background-size: cover;
-    margin: auto;
+    margin: 5rem auto;
 }
 
 .CartEmpty h2 {
     margin-top: 2rem;
+    margin: auto;
 }
 
-.CartEmpty button {
+.resButton {
     width: 20%;
     height: 40px;
     font-weight: 600;
@@ -30,5 +35,14 @@
     color: white;
     cursor: pointer;
     margin-top: 2rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resButton a {
+    text-decoration: none;
+    color: #fff;
 }
 

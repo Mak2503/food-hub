@@ -1,3 +1,54 @@
-.resName {
-    color: lightgrey;
+:root {
+    --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
 }
+
+.Restaurant {
+    width: 296px;
+    height: 345px;
+    position: absolute;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.Restaurant:hover {
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+}
+
+.resInner {
+    margin: 1rem;
+    font-family: var(--font);
+}
+
+.resName {
+    color: #535665;
+    height: 20px;
+    font-size: 17px;
+    font-weight: 800;
+    word-break: break-word;
+}
+
+.resImg {
+    width: 254px;
+    height: 160px;
+}
+
+.resCuisines {
+    color: #535665;
+    font-size: 12px;
+    display: inline;
+}
+
+.resRatingGrid {
+    color: #535665;
+    font-size: 12px;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.resCostForTwo {
+    color: #535665;
+    font-size: 12px;
+}
+

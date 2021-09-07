@@ -1,0 +1,180 @@
+:root {
+  --font: "ProximaNova", Arial, Helvetica Neue, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Product {
+  display: flex;
+  flex-direction: row;
+}
+
+.Product-header {
+  width: 100%;
+  height: 330px;
+  background-color: #171a29;
+  font-family: var(--font);
+  color: white;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.Product-img img {
+  max-width: 70%;
+  max-height: 160px;
+  display: flex;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.Product-content {
+  margin-top: 110px;
+}
+
+.Product-title {
+  width: 100%;
+  margin: 8px 0px;
+  font-size: 1.8rem;
+}
+
+.Product-cuisines {
+  font-size: 15px;
+  color: gainsboro;
+  margin: 15px 0px;
+}
+
+.Product-details {
+  display: grid;
+  grid-template-areas:
+    "con con con con con con"
+    "con con con con con con";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.Product-rating-msg {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.ProductMenu {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.cart {
+  position: sticky;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 250px;
+  height: 500px;
+  right: 0;
+  color: gray;
+}
+
+.cart-img { 
+  background-image: url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  width: 200px;
+  height: 200px;
+  position: sticky;
+  top: 200px;
+  display: block;
+}
+
+
+.Menu {
+  max-width: 100%;
+  max-height: fit-content;
+  color: #535665;
+  letter-spacing: 1px;
+  position: relative;
+  top: 400px;
+  margin: 3rem;
+}
+
+.Menu-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.menu-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-img img {
+  width: 130px;
+  height: 100px;
+  border-radius: 7px;
+  margin-top: 0;
+}
+
+.menu-description {
+  max-width: 60%;
+  display: grid;
+  font-family: var(--font);
+  grid-template-rows: 1fr 1fr;
+}
+
+.menu-price {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.menu-des {
+  font-size: 13px;
+  color: grey;
+  margin: 1rem auto;
+}
+
+.menu-name {
+  font-weight: 800;
+  margin-top: 0;
+}
+
+.hr-line {
+  display: block;
+}
+
+.vr-line {
+  border-left: 1px solid lightgrey;
+  height: 100%;
+  position: absolute;
+  left: -50px;
+}
+
+.AddButton {
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  margin: 0 1.6rem;
+  font-size: 14px;
+  font-weight: bold;
+  color: #60b246;
+}
+
+.initial {
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+}
+
+.increment {
+  justify-content: center;
+  align-items: center;
+}
+
+.increment div {
+  padding: 7px;
+}
+
