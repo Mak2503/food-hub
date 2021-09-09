@@ -6,12 +6,13 @@ class AddButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 1,
     };
   }
 
   increment = () => {
     this.setState({ count: this.state.count + 1 });
+    localStorage.setItem("quantity", this.state.count);
     const { menuPrice, menuName } = this.props;
     const { cart, updateCart } = this.context;
     const newCart = [...cart.items];
@@ -26,14 +27,14 @@ class AddButton extends React.Component {
 
   decrement = () => {
     this.setState({ count: this.state.count - 1 });
-    const { menuPrice, menuName } = this.props;
-    const { cart, updateCart } = this.context;
+    localStorage.setItem("quantity", this.state.count);
+    const { menuName } = this.props;
+    const { cart } = this.context;
     const newCart = [...cart.items];
     const newItemLoc = cart.items.findIndex((c) => c.menuName === menuName);
-    if (newCart[newItemLoc].quantity === 1){
+    if (newCart[newItemLoc].quantity === 1) {
       newCart.splice(newItemLoc, 1);
-    }
-    else if (newCart[newItemLoc].quantity > 1) {
+    } else if (newCart[newItemLoc].quantity > 1) {
       newCart[newItemLoc].quantity = cart.items[newItemLoc].quantity - 1;
     }
   };
@@ -49,7 +50,9 @@ class AddButton extends React.Component {
         ) : (
           <div className="increment" style={{ display: "flex" }}>
             <div onClick={this.decrement}>-</div>
-            <div>{count}</div>
+            {localStorage.getItem("quantity") && (
+              <div>{localStorage.getItem("quantity")}</div>
+            )}
             <div onClick={this.increment}>+</div>
           </div>
         )}

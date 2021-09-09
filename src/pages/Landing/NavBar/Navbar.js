@@ -1,5 +1,4 @@
 import React from 'react'
-import LoginPage from '../../Login/LoginPage'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 

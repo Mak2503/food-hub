@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./Product.css";
-import NumberFormat from "react-currency-format";
-import ProductMenu from "./ProductMenu";
 import Navbar from "../Landing/NavBar/Navbar";
 
 const Loader = () => (
@@ -66,8 +64,6 @@ class Product extends Component {
       city,
       rating,
       totalRating,
-      costForTwo,
-      costForTwoMsg,
       cost,
       deliveryTime,
     } = this.state;
@@ -79,7 +75,7 @@ class Product extends Component {
         </div>
         <div className="Product-header">
           <div className="Product-img">
-            <img src={imgUrl} alt="image" />
+            <img src={imgUrl} alt=""/>
           </div>
           <div className="Product-content">
             <div className="Product-title">{resName}</div>

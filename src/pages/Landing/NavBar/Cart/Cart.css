@@ -3,13 +3,14 @@
     --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
 }
 
-.CartEmpty {
+.Cart {
     font-family: var(--font);
     color: #535665;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .resImg {
@@ -21,13 +22,13 @@
     margin: 5rem auto;
 }
 
-.CartEmpty h2 {
+.Cart h2 {
     margin-top: 2rem;
     margin: auto;
 }
 
 .resButton {
-    width: 20%;
+    width: 100%;
     height: 40px;
     font-weight: 600;
     background-color: var(--primary-color);

@@ -1,26 +1,17 @@
 import './index';
 import "./index.css"
-import SearchBox from './pages/Landing/Header/SearchBox';
-import { BrowserRouter as Router,
+import {
   Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-  Redirect
+  Route
 } from "react-router-dom";
-import CartEmpty from './pages/Landing/NavBar/Cart/CartEmpty';
+import Cart from './pages/Landing/NavBar/Cart/Cart';
 import Navbar from './pages/Landing/NavBar/Navbar';
 import LoginPage from './pages/Login/LoginPage';
 import SignupPage from './pages/SignUp/SignupPage';
 import Header from './pages/Landing/Header/Header';
-import SearchPage from './pages/Landing/Header/SearchPage';
-import Restaurant from './pages/Landing/Body/Restaurant';
 import BodyGrid from './pages/Landing/Body/BodyGrid';
 import Product from './pages/Product/Product';
 import ProductMenu from './pages/Product/ProductMenu';
-import DemoRes from './pages/Product/DemoRes'
-import AppWIthContext from './pages/Product/AppWIthContext';
 import CartProvider from './pages/Product/CartProvider';
 function App() {
   return (
@@ -32,6 +23,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/cart">
+          <Cart/>
         </Route>
         <Route path="/restaurant/:id">
           <Product />

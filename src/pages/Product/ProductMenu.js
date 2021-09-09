@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Menu from "./Menu";
 import "./Product.css"
 
@@ -28,11 +28,13 @@ class ProductMenu extends Component {
             menuDes: l.description,
           };
         });
+        this.setState({ menu })
       });
   }
   render() {
     return (
       <div className="ProductMenu">
+        <div></div>
         <div>
           {this.state.menu.map((res) => {
             return (
@@ -47,6 +49,7 @@ class ProductMenu extends Component {
             );
           })}
         </div>
+        {/* <div><Cart /></div>  */}
       </div>
     );
   }

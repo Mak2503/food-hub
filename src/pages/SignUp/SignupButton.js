@@ -4,7 +4,7 @@ class SignupButton extends React.Component {
     render(){
         return (
             <div className="SignupButton">
-                <button type="submit">CONTINUE</button>
+                <button type="submit" >CONTINUE</button>
             </div>
         )
     }
