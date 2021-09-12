@@ -1,8 +1,5 @@
-@font-face {
-    font-family: ProximaNova, Arial, Helvetica, sans-serif;
-    src: url(C:\Users\ACER\Documents\GitHub\swiggy\src\proxima.woff2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 *{
-    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
 }
