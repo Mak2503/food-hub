@@ -49,7 +49,6 @@ class ProductMenu extends Component {
             );
           })}
         </div>
-        {/* <div><Cart /></div>  */}
       </div>
     );
   }
