@@ -3,9 +3,16 @@
   --font: ProximaNova, Arial, Helvetica Neue, sans-serif;
 }
 
+.LoginPage-active {
+  left: 0;
+}
+
 .LoginPage {
+  width: 600px;
   color: #282c3f;
   margin: 20px;
+  right: -100%;
+  transition: 850ms;
 }
 
 .LoginPage a {
@@ -39,8 +46,15 @@
   width: 60%;
   height: 70px;
   font-weight: bold;
+  margin-top: 20px;
   background-color: var(--primary-color);
   border: none;
   color: white;
   cursor: pointer;
+}
+
+.LoginErrMessage {
+  color: red;
+  font-size: large;
+  margin-top: 20px;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Loader } from "../../Product/Product";
 import "./BodyGrid.css";
 import Restaurant from "./Restaurant";
 
@@ -8,6 +9,7 @@ class BodyGrid extends React.Component {
     super(props);
     this.state = {
       restaurants: [],
+      loading: true,
     };
   }
 
@@ -19,6 +21,7 @@ class BodyGrid extends React.Component {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         let restaurants = res.data.map((d) => {
           return {
             resName: d.name,
@@ -26,19 +29,21 @@ class BodyGrid extends React.Component {
             cuisines: d.cuisines.join(", "),
             rating: d.avgRating,
             costForTwo: d.costForTwoString,
-            id: d.id
+            id: d.id,
           };
         });
-        this.setState({ restaurants });
-      });
+        this.setState({ restaurants, loading: false });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
     return (
       <div className="BodyGrid">
+        {this.state.loading ? <Loader /> : null}
         {this.state.restaurants.map((res) => {
           return (
-            <div>
+            <div key={res.id}>
               <Link to={`/restaurant/${res.id}`}>
                 <Restaurant
                   imgUrl={res.imgUrl}

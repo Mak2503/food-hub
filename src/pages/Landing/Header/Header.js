@@ -8,7 +8,7 @@ class Header extends React.Component {
     render(){
         return (
             <div className="Header">
-                <h2>All restaurants delivering to  </h2>
+                <h2>All restaurants delivering to sdfsdf  </h2>
                 <p>Set exact location to find the right restaurants near you.</p>
                 <SearchBox />
             </div>

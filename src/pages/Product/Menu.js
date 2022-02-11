@@ -4,7 +4,7 @@ import "./Product.css";
 
 class Menu extends PureComponent {
   render() {
-    const { menuName, price, menuImg, menuDes } = this.props;
+    const { menuName, price, cloudinaryImageId, menuImg, menuDes } = this.props;
     return (
       <div className="Menu">
         <div className="Menu-details">
@@ -14,13 +14,19 @@ class Menu extends PureComponent {
               {"\u20B9"}
               {price / 100}
             </div>
+            <div className="menu-des">{menuDes}</div>
           </div>
           <div className="menu-img">
-            <img src={menuImg} alt="img"/>
-            <AddButton menuName={menuName} menuPrice={price}/>
+            {cloudinaryImageId !== "" ? (
+              <img src={menuImg} alt="img" />
+            ) : (
+              <div className="altImg"></div>
+            )}
+
+            <AddButton menuName={menuName} menuPrice={price} />
           </div>
         </div>
-        <div className="menu-des">{menuDes}</div>
+
         <div>
           <hr className="hr-line" />
         </div>

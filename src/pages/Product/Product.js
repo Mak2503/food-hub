@@ -4,12 +4,12 @@ import "./Product.css";
 import Navbar from "../Landing/NavBar/Navbar";
 
 const Loader = () => (
-  <div class="divLoader">
-    <svg class="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
+  <div className="divLoader">
+    <svg className="svgLoader" viewBox="0 0 100 100" width="8em" height="8em">
       <path
         stroke="none"
         d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50"
-        fill="#51CACC"
+        fill="#FC8019"
         transform="rotate(179.719 50 51)"
       >
         <animateTransform
@@ -55,6 +55,7 @@ class Product extends Component {
         });
       });
   }
+
   render() {
     const {
       resName,
@@ -70,12 +71,9 @@ class Product extends Component {
     return (
       <div className="Product">
         {this.state.loading ? <Loader /> : null}
-        <div>
-          <Navbar />
-        </div>
         <div className="Product-header">
           <div className="Product-img">
-            <img src={imgUrl} alt=""/>
+            <img src={imgUrl} alt="" />
           </div>
           <div className="Product-content">
             <div className="Product-title">{resName}</div>
@@ -84,20 +82,23 @@ class Product extends Component {
               {locality}, {city}
             </div>
             <div className="Product-details">
-              <div className="Product-rating">
-                {"\u2605"} {rating}
+              <div className="">
+                <div className="Product-rating">
+                  {"\u2605"} {rating}
+                </div>
+                <div className="Product-rating">
+                  {deliveryTime ? deliveryTime : "-- mins"}
+                </div>
+                <div className="Product-rating">
+                  {"\u20B9"}
+                  {cost / 100}
+                </div>
               </div>
-              <div className="Product-rating">{deliveryTime}</div>
-              <div className="Product-rating">
-                {"\u20B9"}
-                {cost / 100}
+              <div>
+                <div className="Product-rating-msg">{totalRating}+ Ratings</div>
+                <div className="Product-rating-msg">Delivery Time</div>
+                <div className="Product-rating-msg">Cost for two</div>
               </div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div className="Product-rating-msg">{totalRating}+ Ratings</div>
-              <div className="Product-rating-msg"></div>
-              <div className="Product-rating-msg">Cost for two</div>
             </div>
           </div>
         </div>
@@ -105,4 +106,6 @@ class Product extends Component {
     );
   }
 }
+
+export { Loader };
 export default withRouter(Product);

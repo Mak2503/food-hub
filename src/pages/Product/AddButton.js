@@ -1,20 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Product.css";
 import { CartContext } from "./CartProvider";
+import useLocalStorage from "../../libs/useLocalStorage";
 
-class AddButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 1,
-    };
-  }
+const AddButton = (props) => {
+  const { menuPrice, menuName } = props;
+  const { cart, updateCart } = useContext(CartContext);
+  const [tokenData, _] = useLocalStorage("tokenData");
 
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-    localStorage.setItem("quantity", this.state.count);
-    const { menuPrice, menuName } = this.props;
-    const { cart, updateCart } = this.context;
+  const increment = () => {
     const newCart = [...cart.items];
     const newItemLoc = cart.items.findIndex((c) => c.menuName === menuName);
     if (newItemLoc > -1) {
@@ -25,11 +19,7 @@ class AddButton extends React.Component {
     updateCart({ items: newCart });
   };
 
-  decrement = () => {
-    this.setState({ count: this.state.count - 1 });
-    localStorage.setItem("quantity", this.state.count);
-    const { menuName } = this.props;
-    const { cart } = this.context;
+  const decrement = () => {
     const newCart = [...cart.items];
     const newItemLoc = cart.items.findIndex((c) => c.menuName === menuName);
     if (newCart[newItemLoc].quantity === 1) {
@@ -37,28 +27,38 @@ class AddButton extends React.Component {
     } else if (newCart[newItemLoc].quantity > 1) {
       newCart[newItemLoc].quantity = cart.items[newItemLoc].quantity - 1;
     }
+    updateCart({ items: newCart });
   };
 
-  render() {
-    const { count } = this.state;
-    return (
-      <div className="AddButton">
-        {count <= 0 ? (
-          <div className="initial" onClick={this.increment}>
+  const { items } = cart;
+  let selectedItem = items.find((item) => item.menuName === menuName);
+  const quantity = selectedItem ? selectedItem.quantity : 0;
+  return (
+    <div className="AddButton" style={{ position: "relative", bottom: "18px" }}>
+      {tokenData ? (
+        quantity <= 0 ? (
+          <div className="initial" onClick={() => increment()}>
             ADD
           </div>
         ) : (
           <div className="increment" style={{ display: "flex" }}>
-            <div onClick={this.decrement}>-</div>
-            {localStorage.getItem("quantity") && (
-              <div>{localStorage.getItem("quantity")}</div>
-            )}
-            <div onClick={this.increment}>+</div>
+            <div onClick={() => decrement()}>-</div>
+            {quantity}
+            <div onClick={() => increment()}>+</div>
           </div>
-        )}
-      </div>
-    );
-  }
-}
+        )
+      ) : (
+        <a
+          href="/login"
+          className="initial"
+          style={{ textDecoration: "none", color: "#60b246" }}
+        >
+          ADD
+        </a>
+      )}
+    </div>
+  );
+};
+
 AddButton.contextType = CartContext;
 export default AddButton;

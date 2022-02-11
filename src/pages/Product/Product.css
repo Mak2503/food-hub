@@ -8,36 +8,30 @@ body {
 }
 
 .Product {
-  display: flex;
-  flex-direction: row;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .Product-header {
   width: 100%;
-  height: 330px;
+  padding: 50px;
   background-color: #171a29;
-  font-family: var(--font);
   color: white;
-  position: absolute;
+
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
 .Product-img img {
   max-width: 70%;
-  max-height: 160px;
-  display: flex;
+  height: 160px;
   margin: auto;
-  margin-top: 120px;
-}
-
-.Product-content {
-  margin-top: 110px;
+  display: flex;
 }
 
 .Product-title {
   width: 100%;
-  margin: 8px 0px;
   font-size: 1.8rem;
 }
 
@@ -48,14 +42,21 @@ body {
 }
 
 .Product-details {
-  display: grid;
-  grid-template-areas:
-    "con con con con con con"
-    "con con con con con con";
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Product-details div {
+  display: flex;
+}
+
+.Product-rating {
+  width: 33.33%;
 }
 
 .Product-rating-msg {
+  width: 33.33%;
   font-size: 13px;
   margin-top: 8px;
 }
@@ -77,7 +78,7 @@ body {
   color: gray;
 }
 
-.cart-img { 
+.cart-img {
   background-image: url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0);
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,14 +90,11 @@ body {
   display: block;
 }
 
-
 .Menu {
   max-width: 100%;
   max-height: fit-content;
-  color: #535665;
+  color: rgb(40 44 63);
   letter-spacing: 1px;
-  position: relative;
-  top: 400px;
   margin: 3rem;
 }
 
@@ -110,6 +108,14 @@ body {
   flex-direction: column;
 }
 
+.altImg {
+  background-color: #535665;
+  width: 130px;
+  height: 100px;
+  border-radius: 7px;
+  margin-top: 0;
+}
+
 .menu-img img {
   width: 130px;
   height: 100px;
@@ -118,27 +124,47 @@ body {
 }
 
 .menu-description {
-  max-width: 60%;
-  display: grid;
-  font-family: var(--font);
-  grid-template-rows: 1fr 1fr;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-price {
   font-size: 13px;
   font-weight: 700;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .menu-des {
   font-size: 13px;
-  color: grey;
+  color: rgb(40 44 63 / 45%);
   margin: 1rem auto;
 }
 
 .menu-name {
   font-weight: 800;
   margin-top: 0;
+}
+
+.menu-category {
+  padding: 0px 50px;
+  font-size: 25px;
+  color: rgb(40 44 63);
+}
+
+.menu-category-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: end;
+}
+
+.menu-category-block {
+  width: 5px;
+  height: 20px;
+  background-color: #fc8019;
+  margin: 10px 0px;
 }
 
 .hr-line {
@@ -153,6 +179,7 @@ body {
 }
 
 .AddButton {
+  background-color: white;
   width: 80px;
   height: 30px;
   cursor: pointer;
@@ -177,4 +204,3 @@ body {
 .increment div {
   padding: 7px;
 }
-
