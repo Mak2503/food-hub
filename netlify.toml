@@ -1,6 +1,3 @@
 [build]
   publish = ".react"
   command = "react-scripts build"
-
-[[plugins]]
-package = "@netlify/plugin-react"
