@@ -1,6 +1,6 @@
 [build]
-  publish = ".next"
-  command = "next build"
+  publish = ".react"
+  command = "react-scripts build"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+package = "@netlify/plugin-react"
