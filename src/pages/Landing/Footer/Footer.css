@@ -1,0 +1,26 @@
+.Footer {
+  padding: 50px;
+  margin-top: 100px;
+  background-color: black;
+  color: white;
+}
+
+.Footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer-link-head {
+  margin-bottom: 10px;
+  color: rgb(128 128 128);
+  font-weight: bold;
+}
+
+.Footer-links ul li {
+  margin: 15px 0px;
+}
+
+.Footer-links ul li a {
+  text-decoration: none;
+  color: white;
+}
