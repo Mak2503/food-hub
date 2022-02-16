@@ -4,11 +4,14 @@ import Menu from "./Menu";
 import { groupBy } from "lodash";
 import "./Product.css";
 import ProductCategory from "./ProductCategory";
+import SideCart from "./SideCart";
 
 class ProductMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      scrolled: false,
+      restaurantInfo: {},
       recommendedMenu: [],
       categorizedMenu: [],
     };
@@ -23,6 +26,13 @@ class ProductMenu extends Component {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
+        this.setState({
+          restaurantInfo: {
+            resName: res.data.name,
+            resImg: imgBaseUrl + res.data.cloudinaryImageId,
+            resId: res.data.id,
+          },
+        });
         let menu = Object.values(res.data.menu.items).map((l) => {
           return {
             menuId: l.id,
@@ -31,6 +41,7 @@ class ProductMenu extends Component {
             menuImg: imgBaseUrl + l.cloudinaryImageId,
             cloudinaryImageId: l.cloudinaryImageId,
             menuDes: l.description,
+            menuIsVeg: l.isVeg,
             menuRecommended:
               l.recommended === 1 ? "recommendedMenu" : "notRecommendedMenu",
             menuCategory: l.category,
@@ -44,41 +55,54 @@ class ProductMenu extends Component {
           return data.menuCategory;
         });
 
+        const changeNavbarSize = () => {
+          if (window.scrollY >= 80) {
+            this.setState({ scrolled: true });
+          } else {
+            this.setState({ scrolled: false });
+          }
+        };
+        window.addEventListener("scroll", changeNavbarSize);
+
         this.setState({
           recommendedMenu: groupMenu.recommendedMenu,
           categorizedMenu: menuCat,
         });
       });
   }
+
   render() {
-    const { categorizedMenu, recommendedMenu } = this.state;
-    console.log(categorizedMenu, recommendedMenu);
+    const { categorizedMenu, recommendedMenu, restaurantInfo, scrolled } =
+      this.state;
+    let topMargin = scrolled ? 160 : 270;
+
     return (
       <div className="ProductMenu">
         <div className="menu-category-list">
-          <div style={{ display: "flex", alignItems: "flex-end" }}>
-            <div style={{ margin: "10px 20px" }}>Recommended</div>
-            <div className="menu-category-block"></div>
+          <div
+            style={{
+              position: "sticky",
+              top: `${scrolled ? 160 : 270}px`,
+              display: "flex",
+              alignItems: "flex-end",
+            }}
+          >
+            <a href="#Recommended">Recommended</a>
+            {/* <div className="menu-category-block"></div> */}
           </div>
           {Object.keys(categorizedMenu).map((data) => {
+            topMargin = topMargin + 30;
             return (
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                }}
-              >
-                <div style={{ margin: "10px 20px" }}>{data}</div>
-                <div className="menu-category-block"></div>
-              </div>
+              <ProductCategory menuCategory={data} topMargin={topMargin} />
             );
           })}
         </div>
         <div style={{ borderLeft: "1px solid gray", padding: "20px 0px" }}>
           {/* Showing recommended menu list */}
           <div className="menu-category">
-            <h2 style={{ margin: 0, fontSize: "32px" }}>Recommended</h2>
+            <h2 style={{ margin: 0, fontSize: "32px" }} id="Recommended">
+              Recommended
+            </h2>
             <div
               style={{
                 fontSize: "13px",
@@ -87,18 +111,20 @@ class ProductMenu extends Component {
                 fontWeight: 600,
               }}
             >
-              {recommendedMenu.length} ITEMS
+              {recommendedMenu.length} ITEM{recommendedMenu.length > 1 && "S"}
             </div>
           </div>
           {recommendedMenu.map((data) => {
             return (
               <div>
                 <Menu
+                  restaurantInfo={restaurantInfo}
                   menuName={data.menuName}
                   price={data.price}
                   cloudinaryImageId={data.cloudinaryImageId}
                   menuImg={data.menuImg}
                   menuDes={data.menuDes}
+                  menuIsVeg={data.menuIsVeg}
                 />
               </div>
             );
@@ -108,7 +134,9 @@ class ProductMenu extends Component {
             return (
               <div className="renderMenu" key={key}>
                 <div className="menu-category">
-                  <h2 style={{ margin: 0, fontSize: "32px" }}>{key}</h2>
+                  <h2 style={{ margin: 0, fontSize: "32px" }} id={key}>
+                    {key}
+                  </h2>
                   <div
                     style={{
                       fontSize: "13px",
@@ -124,6 +152,7 @@ class ProductMenu extends Component {
                   return (
                     <div className="" key={data.id}>
                       <Menu
+                        restaurantInfo={restaurantInfo}
                         menuName={data.menuName}
                         price={data.price}
                         cloudinaryImageId={data.cloudinaryImageId}
@@ -136,6 +165,9 @@ class ProductMenu extends Component {
               </div>
             );
           })}
+        </div>
+        <div>
+          <SideCart restaurantInfo={restaurantInfo} />
         </div>
       </div>
     );
