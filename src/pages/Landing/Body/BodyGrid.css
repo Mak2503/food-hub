@@ -1,13 +1,13 @@
 .BodyGrid {
-    margin: 3.5rem;
-    display: grid;
-    grid-template-areas: 
+  width: fit-content;
+  margin: 3.5rem;
+  display: grid;
+  grid-template-areas:
     "content content content content"
     "content content content content"
     "content content content content"
-    "content content content content"
-    ;
-    grid-template-columns: 296px 296px 296px 296px;
-    grid-template-rows: 345px 345px 345px 345px;
-    grid-gap: 15px;
+    "content content content content";
+  grid-template-columns: 296px 296px 296px 296px;
+  grid-template-rows: 345px 345px 345px 345px;
+  grid-gap: 15px;
 }
