@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../../Product/CartProvider";
-import "../../../Product/Product.css";
+import { CartContext } from "../../Product/CartProvider";
+import "../../Product/Product.css";
 
 const CartAddButton = (props) => {
   const { menuPrice, menuName, restaurantInfo } = props;

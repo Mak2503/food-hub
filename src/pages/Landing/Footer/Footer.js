@@ -19,13 +19,13 @@ export default function Footer() {
                 <a href="/">Careers</a>
               </li>
               <li>
-                <a href="/">Swiggy Blog</a>
+                <a href="/">Food Hub Blog</a>
               </li>
               <li>
                 <a href="/">Bug Bounty</a>
               </li>
               <li>
-                <a href="/">Swiggy one</a>
+                <a href="/">Food Hub one</a>
               </li>
             </ul>
           </div>

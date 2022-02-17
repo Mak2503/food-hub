@@ -1,7 +1,7 @@
 import "./index";
 import "./index.css";
 import { Switch, Route } from "react-router-dom";
-import Cart from "./pages/Landing/NavBar/Cart/Cart";
+import Cart from "./pages/Landing/Cart/Cart";
 import Navbar from "./pages/Landing/NavBar/Navbar";
 import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/SignUp/SignupPage";

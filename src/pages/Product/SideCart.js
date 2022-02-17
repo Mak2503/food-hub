@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CartAddButton from "../Landing/NavBar/Cart/CartAddButton";
+import CartAddButton from "../Landing/Cart/CartAddButton";
 import { CartContext } from "./CartProvider";
-import "../Landing/NavBar/Cart/Cart.css";
+import "../Landing/Cart/Cart.css";
 
 export default function SideCart(props) {
   const [scrolled, setScrolled] = useState(false);

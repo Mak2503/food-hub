@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Loader } from "../../Product/Product";
+import Loader from "../../../libs/loader";
 import "./BodyGrid.css";
 import Restaurant from "./Restaurant";
 
-class BodyGrid extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      restaurants: [],
-      loading: true,
-    };
-  }
+const BodyGrid = () => {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     restaurants: [],
+  //     loading: true,
+  //   };
+  // }
 
-  componentDidMount() {
+  const [restaurantsList, setRestaurantsList] = useState({
+    restaurants: [],
+    loading: true,
+  });
+
+  useEffect(() => {
     const url =
       "https://food-power.glitch.me/restaurants?limit=10&lastDeliveryTime=0";
     const imgBaseUrl =
@@ -32,32 +37,32 @@ class BodyGrid extends React.Component {
             id: d.id,
           };
         });
-        this.setState({ restaurants, loading: false });
+        console.log(restaurants);
+        setRestaurantsList({ restaurants, loading: false });
       })
       .catch((err) => console.log(err));
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="BodyGrid">
-        {this.state.loading ? <Loader /> : null}
-        {this.state.restaurants.map((res) => {
-          return (
-            <div key={res.id}>
-              <Link to={`/restaurant/${res.id}`}>
-                <Restaurant
-                  imgUrl={res.imgUrl}
-                  resName={res.resName}
-                  cuisines={res.cuisines}
-                  rating={res.rating}
-                  costForTwo={res.costForTwo}
-                />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="BodyGrid">
+      {restaurantsList.loading ? <Loader /> : null}
+      {restaurantsList.restaurants.map((res) => {
+        return (
+          <div key={res.id}>
+            <Link to={`/restaurant/${res.id}`}>
+              <Restaurant
+                imgUrl={res.imgUrl}
+                resName={res.resName}
+                cuisines={res.cuisines}
+                rating={res.rating}
+                costForTwo={res.costForTwo}
+              />
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 export default BodyGrid;

@@ -10,7 +10,7 @@ const Navbar = (props) => {
     <div style={{ position, width: "100%", zIndex: 2 }}>
       <div className="Navbar">
         <Link href="/" style={{ textDecoration: "none" }}>
-          <div className="Navbar-head">SWIGGY</div>
+          <div className="Navbar-head">Food Hub</div>
         </Link>
         <div className="Navbar-mobile-menu">
           <button onClick={() => setMobileMenu(!mobileMenu)}>

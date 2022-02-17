@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useLocalStorage from "../../../../libs/useLocalStorage";
-import AddButton from "../../../Product/AddButton";
-import { CartContext } from "../../../Product/CartProvider";
+import useLocalStorage from "../../../libs/useLocalStorage";
+import { CartContext } from "../../Product/CartProvider";
 import "./Cart.css";
 import CartAddButton from "./CartAddButton";
 
