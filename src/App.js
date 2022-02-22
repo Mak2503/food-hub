@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Banner from "./pages/Landing/Banner/Banner";
 import useLocalStorage from "./libs/useLocalStorage";
 import Footer from "./pages/Landing/Footer/Footer";
+import ReactGA from "react-ga";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -24,7 +25,14 @@ function App() {
     setOpenModal(!openModal);
   };
 
+  // setup Google Analytics
+  const setGA = () => {
+    ReactGA.initialize("G-047X8PHLPR");
+    ReactGA.pageview("Init page view");
+  };
+
   useEffect(() => {
+    setGA();
     const url = `https://food-power.glitch.me/cart/${cartId}`;
     const tokenData = JSON.parse(localStorage.getItem("tokenData"));
     fetch(url, {
