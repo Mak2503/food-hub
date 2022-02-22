@@ -1,12 +1,11 @@
-import React, { PureComponent } from "react";
-import { Link } from "react-router-dom";
-import "./Restaurant.css";
+import React, { useState } from "react";
+import "./BodyGrid.css";
 
-class Restaurant extends PureComponent {
-  render() {
-    if (!this.props) return <Link href="/login" />;
-    const { resName, cuisines, rating, costForTwo, imgUrl } = this.props;
-    return (
+const Restaurant = (props) => {
+  const { resName, cuisines, rating, costForTwo, imgUrl } = props;
+
+  return (
+    <div>
       <div className="Restaurant">
         <div className="resInner">
           <img className="resImg" src={imgUrl} alt="img" />
@@ -20,7 +19,27 @@ class Restaurant extends PureComponent {
           </div>
         </div>
       </div>
-    );
-  }
-}
+      {/* The below component renders when the screen is below 500px ie, mobile */}
+      <div className="Restaurant-mobile">
+        <div>
+          <img className="resImg-mobile" src={imgUrl} alt="img" />
+        </div>
+        <div style={{ width: "80%" }}>
+          <div style={{ height: "50%" }}>
+            <h2 className="resName-mobile">{resName}</h2>
+            <div className="resCuisines-mobile">{cuisines}</div>
+          </div>
+          <div style={{ display: "flex", borderTop: "1px solid lightgray" }}>
+            <span className="resRating-mobile">
+              {"\u2605"}
+              {rating}
+            </span>
+            <span className="resCost-mobile">{costForTwo}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default Restaurant;

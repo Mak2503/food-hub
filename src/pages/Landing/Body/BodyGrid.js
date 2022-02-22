@@ -49,7 +49,10 @@ const BodyGrid = () => {
       {restaurantsList.restaurants.map((res) => {
         return (
           <div key={res.id}>
-            <Link to={`/restaurant/${res.id}`}>
+            <Link
+              to={`/restaurant/${res.id}`}
+              style={{ textDecoration: "none" }}
+            >
               <Restaurant
                 imgUrl={res.imgUrl}
                 resName={res.resName}
