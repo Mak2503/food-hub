@@ -5,7 +5,9 @@ class Banner extends React.Component {
   render() {
     return (
       <div className="Banner">
-        <div className="Banner-head">All restaurants delivering to sdfsdf </div>
+        <div className="Banner-head">
+          All restaurants delivering to Marathahalli, Bangalore
+        </div>
         <p className="Banner-text">
           Set location to find the right restaurants near you.
         </p>
