@@ -72,6 +72,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="Footer-mobile">
+        <img
+          className="Footer-img"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/footer_graphic_vxojqs"
+          alt="footer-img"
+        />
+      </div>
     </div>
   );
 }

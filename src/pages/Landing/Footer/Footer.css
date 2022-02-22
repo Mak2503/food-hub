@@ -1,6 +1,6 @@
 .Footer {
   padding: 50px;
-  margin-top: 100px;
+  margin-top: 20px;
   background-color: black;
   color: white;
 }
@@ -23,4 +23,18 @@
 .Footer-links ul li a {
   text-decoration: none;
   color: white;
+}
+
+@media only screen and (max-width: 500px){
+  .Footer {
+    margin-top: 20px;
+    padding: 0px;
+    background-color: white;
+  }
+  .Footer-links {
+    display: none;
+  }
+  .Footer-img {
+    width: 100%;
+  }
 }
