@@ -1,3 +1,0 @@
-[build]
-  publish = ".react"
-  command = "react-scripts build"
