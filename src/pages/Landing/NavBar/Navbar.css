@@ -90,9 +90,9 @@
 
   .Navbar-head {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 22px;
     color: var(--primary-color);
-    margin-left: 2rem;
+    margin-left: 10px;
   }
 
   .Navbar-page {
