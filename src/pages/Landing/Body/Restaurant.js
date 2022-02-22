@@ -30,10 +30,9 @@ const Restaurant = (props) => {
             <div className="resCuisines-mobile">{cuisines}</div>
           </div>
           <div style={{ display: "flex", borderTop: "1px solid lightgray" }}>
-            <span className="resRating-mobile">
-              {"\u2605"}
-              {rating}
-            </span>
+            <div style={{ width: "20%", marginTop: "5px" }}>
+              <span className="resRating-mobile">{rating}</span>
+            </div>
             <span className="resCost-mobile">{costForTwo}</span>
           </div>
         </div>

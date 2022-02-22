@@ -57,7 +57,7 @@ body {
     font-family: var(--font);
     background-color: var(--secondary-color);
     color: white;
-    width: 100%;
+    width: 90%;
     font-size: 13px;
     overflow-wrap: break-word;
     padding: 20px;

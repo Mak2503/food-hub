@@ -75,7 +75,7 @@ export default function Footer() {
       <div className="Footer-mobile">
         <img
           className="Footer-img"
-          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/footer_graphic_vxojqs"
+          src="/assets/footer_graphic.jpg"
           alt="footer-img"
         />
       </div>

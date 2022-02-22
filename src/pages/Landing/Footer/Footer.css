@@ -25,7 +25,14 @@
   color: white;
 }
 
+.Footer-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 500px){
+  .Footer-mobile {
+    display: block;
+  }
   .Footer {
     margin-top: 20px;
     padding: 0px;
