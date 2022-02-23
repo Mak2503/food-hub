@@ -44,7 +44,7 @@ const Navbar = (props) => {
                   {tokenData.userName}
                 </span>
               ) : (
-                <a href="/signup">Sign in</a>
+                <a href="/login">Sign in</a>
               )}
             </li>
           </ul>
@@ -65,7 +65,7 @@ const Navbar = (props) => {
               {tokenData.userName}
             </span>
           ) : (
-            <a href="/signup">Sign in</a>
+            <a href="/login">Sign in</a>
           )}
         </div>
       ) : (
