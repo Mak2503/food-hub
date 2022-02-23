@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import AddButton from "./AddButton";
-import "./Product.css";
+import "./Menu.css";
 
 class Menu extends PureComponent {
   render() {
@@ -13,7 +13,6 @@ class Menu extends PureComponent {
       menuDes,
       menuIsVeg,
     } = this.props;
-    console.log(menuIsVeg);
     return (
       <div className="Menu">
         <div className="Menu-details">

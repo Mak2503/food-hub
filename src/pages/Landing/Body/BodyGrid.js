@@ -37,7 +37,7 @@ const BodyGrid = () => {
   return (
     <div className="BodyGrid">
       <div className="Body-header-mobile">
-        <h2 style={{ fontSize: "16px", margin: "0px" }}>
+        <h2 style={{ fontSize: "17px", margin: "0px" }}>
           About the food culture in the Marathahalli
         </h2>
         <p style={{ fontSize: "12px", color: "#535665" }}>
@@ -48,7 +48,7 @@ const BodyGrid = () => {
           as you'd like. We'll Foody it to you!
         </p>
         <h2
-          style={{ fontSize: "16px", marginTop: "30px", marginBottom: "10px" }}
+          style={{ fontSize: "17px", marginTop: "30px", marginBottom: "10px" }}
         >
           Popular restaurants in and around Marathahalli
         </h2>

@@ -11,7 +11,7 @@ body {
 @media only screen and (min-width: 626px) {
   .Banner {
     font-family: var(--font);
-    background-color: var(--secondary-color);
+    background-color: rgb(23 26 41);
     color: white;
     padding-top: 120px;
     padding-bottom: 30px;
@@ -55,7 +55,7 @@ body {
 @media only screen and (max-width: 625px) {
   .Banner {
     font-family: var(--font);
-    background-color: var(--secondary-color);
+    background-color: rgb(23 26 41);
     color: white;
     width: 90%;
     font-size: 13px;

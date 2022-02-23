@@ -7,7 +7,6 @@ const LoginBox = () => {
   const [pwd, setPwd] = useState("");
   const [tokenData, setTokenData] = useLocalStorage("tokenData", {});
   const [resMessage, setResMessage] = useState({});
-  console.log("mess", resMessage, "token", tokenData);
   const handleSubmit = () => {
     const signupData = {
       email: email,

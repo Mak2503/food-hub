@@ -53,10 +53,18 @@ const Navbar = (props) => {
 
       {mobileMenu ? (
         <div className="Navbar-mobile-menu-list">
-          <a href="/search">Search</a>
-          <a href="/">Offers</a>
-          <a href="/">Help</a>
-          <Link to="/cart">Cart</Link>
+          <a href="/search" onClick={() => setMobileMenu(!mobileMenu)}>
+            Search
+          </a>
+          <a href="/" onClick={() => setMobileMenu(!mobileMenu)}>
+            Offers
+          </a>
+          <a href="/" onClick={() => setMobileMenu(!mobileMenu)}>
+            Help
+          </a>
+          <Link to="/checkout" onClick={() => setMobileMenu(!mobileMenu)}>
+            Cart
+          </Link>
           {tokenData ? (
             <span
               onClick={onOpen}

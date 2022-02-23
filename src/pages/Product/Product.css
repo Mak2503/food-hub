@@ -127,63 +127,6 @@ body {
   display: block;
 }
 
-.Menu {
-  max-width: 100%;
-  max-height: fit-content;
-  color: rgb(40 44 63);
-  letter-spacing: 1px;
-  margin: 3rem;
-}
-
-.Menu-details {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.menu-img {
-  display: flex;
-  flex-direction: column;
-}
-
-.altImg {
-  background-color: #535665;
-  width: 130px;
-  height: 100px;
-  border-radius: 7px;
-  margin-top: 0;
-}
-
-.menu-img img {
-  width: 130px;
-  height: 100px;
-  border-radius: 7px;
-  margin-top: 0;
-}
-
-.menu-description {
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-price {
-  font-size: 13px;
-  font-weight: 700;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.menu-des {
-  font-size: 13px;
-  color: rgb(40 44 63 / 45%);
-  margin: 1rem auto;
-}
-
-.menu-name {
-  font-weight: 800;
-  margin-top: 0;
-}
-
 .menu-category {
   padding: 0px 50px;
   font-size: 25px;

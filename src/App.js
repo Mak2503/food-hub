@@ -59,6 +59,7 @@ function App() {
             <LoginPage />
           </Route>
           <Route path="/checkout">
+            <Navbar onOpen={setModal} position="fixed" />
             <Cart userCartItems={userCartItems || []} onOpen={setModal} />
             <Footer />
           </Route>

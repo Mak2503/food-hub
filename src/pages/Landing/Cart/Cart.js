@@ -25,28 +25,7 @@ const Cart = (props) => {
 
   return (
     <div className="Cart">
-      <div className="cart-nav">
-        <div className="cart-nav-head">Secure Checkout</div>
-        <div className="cart-link">
-          <ul>
-            <li>
-              <a href="/">Help</a>
-            </li>
-            <li>
-              {tokenData ? (
-                <span
-                  onClick={onOpen}
-                  style={{ cursor: "pointer", fontWeight: "bold" }}
-                >
-                  {tokenData.userName}
-                </span>
-              ) : (
-                <a href="/signup">Sign in</a>
-              )}
-            </li>
-          </ul>
-        </div>
-      </div>
+      {/* if items present in the cart */}
       {cart.items.length > 0 ? (
         <div className="cart-page">
           <div className="cart-address">
@@ -111,7 +90,7 @@ const Cart = (props) => {
                 >
                   <div
                     style={{
-                      fontSize: "17px",
+                      fontSize: "15px",
                       fontWeight: "bold",
                       marginLeft: "15px",
                       color: "#535665",
@@ -137,36 +116,18 @@ const Cart = (props) => {
                 <div
                   style={{
                     display: "flex",
-                    justifyContent: "space-around",
                     margin: "20px 0px",
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      width: "50%",
-                      fontSize: "13px",
-                      alignSelf: "center",
-                    }}
-                  >
-                    {c.menuName}
-                  </div>
-                  <div style={{ width: "30%" }}>
+                  <div className="list-1">{c.menuName}</div>
+                  <div className="list-2">
                     <CartAddButton
                       restaurantInfo={cart.restaurantInfo}
                       menuName={c.menuName}
                       menuPrice={c.menuPrice}
                     />
                   </div>
-                  <div
-                    style={{
-                      width: "20%",
-                      textAlign: "right",
-                      fontSize: "13px",
-                      alignSelf: "center",
-                    }}
-                  >
+                  <div className="list-3">
                     {"\u20B9"}
                     {(c.menuPrice / 100) * c.quantity}
                   </div>
@@ -178,7 +139,7 @@ const Cart = (props) => {
                 display: "flex",
                 justifyContent: "space-between",
                 fontWeight: "bold",
-                fontSize: "16px",
+                fontSize: "15px",
               }}
             >
               <div>Subtotal</div>
@@ -191,7 +152,11 @@ const Cart = (props) => {
             <div>
               <button
                 onClick={() => checkOut()}
-                style={{ backgroundColor: "#fc8019" }}
+                style={{
+                  backgroundColor: "#fc8019",
+                  height: "30px",
+                  fontSize: "12px",
+                }}
                 className="SideCart-button"
               >
                 CHECKOUT
@@ -201,10 +166,13 @@ const Cart = (props) => {
         </div>
       ) : (
         <div>
+          {/* if items not present in the cart */}
           <div className="cartImg"></div>
           <div></div>
           <h2 style={{ textAlign: "center" }}>Your cart is empty</h2>
-          <p>You can go home page to view more restaurants</p>
+          <p className="Cart-empty-text">
+            You can go home page to view more restaurants
+          </p>
           <div className="resButton">
             <Link to="/">SEE RESTAURANTS NEAR YOU</Link>
           </div>
