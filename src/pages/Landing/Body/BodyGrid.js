@@ -5,22 +5,15 @@ import "./BodyGrid.css";
 import Restaurant from "./Restaurant";
 
 const BodyGrid = () => {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     restaurants: [],
-  //     loading: true,
-  //   };
-  // }
   const [restaurantsList, setRestaurantsList] = useState({
     restaurants: [],
     loading: true,
   });
+  const imgBaseUrl =
+    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
   useEffect(() => {
     const url = `https://food-power.glitch.me/restaurants?limit=10&lastDeliveryTime=0`;
-    const imgBaseUrl =
-      "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
