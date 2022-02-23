@@ -34,7 +34,7 @@ const LoginBox = () => {
   };
 
   return (
-    <div className="LoginBox">
+    <div className="SignupBox">
       <input
         type="email"
         value={email}
@@ -47,7 +47,8 @@ const LoginBox = () => {
         placeholder="Password"
         onChange={(e) => setPwd(e.target.value)}
       ></input>
-      <div className="LoginButton">
+      <p id="Login-error"></p>
+      <div className="SignupButton">
         <button type="submit" onClick={() => handleSubmit()}>
           LOGIN
         </button>

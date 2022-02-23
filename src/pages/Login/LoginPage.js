@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "./../SignUp/Signup.css";
 import { Link } from "react-router-dom";
 import LoginBox from "./LoginBox";
 
@@ -16,7 +16,7 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="LoginPage">
+      <div className="SignupPage">
         <Link to="/">
           <div className="exit">{"\u2715"}</div>
         </Link>
