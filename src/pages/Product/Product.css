@@ -263,7 +263,7 @@ body {
 }
 
 @media only screen and (max-width: 500px){
-  .menu-category-list, .SideCart, .Product-img-scrolled img, .Product-img, .Product-rating-msg, .menu-category-item {
+  .menu-category-list, .SideCart, .SideCart-scrolled, .Product-img-scrolled img, .Product-img, .Product-rating-msg, .menu-category-item {
     display: none;
   }
   .Product {
