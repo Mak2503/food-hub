@@ -85,7 +85,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 4rem;
+    height: 3rem;
   }
 
   .Navbar-head {
@@ -111,7 +111,7 @@
     padding: 10px 0px;
     flex-direction: column;
     border-bottom: 1px solid gray;
-    padding-left: 30px;
+    padding-left: 15px;
   }
 
   .Navbar-mobile-menu-list a {

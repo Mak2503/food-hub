@@ -79,7 +79,7 @@
   .BodyGrid {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 15px;
   }
   .Body-header-mobile {
     display: block;
