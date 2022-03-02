@@ -74,7 +74,7 @@ export default function SideCart(props) {
           </div>
           <div style={{ fontSize: "12px" }}>Extra charges may apply</div>
           <div>
-            <Link to="/cart">
+            <Link to="/checkout">
               <button
                 className="SideCart-button"
                 style={{ backgroundColor: "rgb(96 178 70)" }}

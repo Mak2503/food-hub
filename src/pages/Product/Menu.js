@@ -14,18 +14,17 @@ class Menu extends PureComponent {
       menuIsVeg,
     } = this.props;
     return (
-      <div className="Menu">
+      <div className="Menu-list">
         <div className="Menu-details">
           <div className="menu-description">
-            <div>
+            <div className="menu-type">
               <img
-                style={{ width: "18px", height: "20px", marginBottom: "10px" }}
                 src={
                   menuIsVeg === 1
                     ? "/assets/icons8-vegetarian-food-symbol-48.png"
                     : "/assets/icons8-non-vegetarian-food-symbol-48.png"
                 }
-                alt="veg-img"
+                alt="veg/non-veg"
               />
             </div>
             <div className="menu-name">{menuName}</div>
@@ -39,7 +38,10 @@ class Menu extends PureComponent {
             {cloudinaryImageId !== "" ? (
               <img src={menuImg} alt="img" />
             ) : (
-              <div className="altImg"></div>
+              <div
+                className="altImg"
+                style={{ backgroundColor: "#535665" }}
+              ></div>
             )}
 
             <AddButton

@@ -103,6 +103,11 @@ body {
   grid-template-columns: 1fr 2fr 1fr;
 }
 
+.Menu {
+  border-left: 1px solid gray;
+  padding: 20px 0px;
+}
+
 .cart {
   position: sticky;
   top: 250px;
@@ -125,6 +130,22 @@ body {
   position: sticky;
   top: 200px;
   display: block;
+}
+
+.menu-category-title {
+  margin: 0px;
+  font-size: 32px;
+}
+
+.menu-category-item {
+  display: block;
+  font-size: 13px;
+  color: rgb(104 107 120);
+  margin-top: 5px;
+  font-weight: 600;
+}
+.mobile-menu-category-item {
+  display: none;
 }
 
 .menu-category {
@@ -239,4 +260,66 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 500px){
+  .menu-category-list, .SideCart, .Product-img-scrolled img, .Product-img, .Product-rating-msg, .menu-category-item {
+    display: none;
+  }
+  .Product {
+    height: auto;
+  }
+  .Product-header {
+    padding: 10px;
+    padding-top: 25px;
+    display: block;
+  }
+  .Product-header-scrolled {
+    padding: 10px;
+    padding-top: 15px;
+    display: block;
+  }
+  .Product-content, .Product-details {
+    width: 100%;
+  }
+  .Product-details div {
+    font-size: 11px;
+  }
+  .Product-title, .Product-title-scrolled {
+    font-size: 1rem;
+  }
+  .Product-cuisines {
+    font-size: 10px;
+    margin: 5px 0px;
+  }
+  .Product-scrolled {
+    height: 3rem;
+  }
+  .ProductMenu {
+    display: block;
+  }
+  .Menu {
+    border: none;
+    margin: 10px;
+  }
+  .menu-category {
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+  .menu-category-title {
+    font-size: 15px;
+  }
+  .mobile-menu-category-item {
+    display: inline;
+  }
+  .AddButton {
+    width: 70px;
+    height: 25px;
+    font-size: 12px;
+    right: 16px;
+    border-radius: 5px;
+  }
+  .initial, .increment div {
+    padding-top: 5px;
+  }
 }

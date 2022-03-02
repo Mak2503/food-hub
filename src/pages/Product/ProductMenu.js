@@ -97,20 +97,16 @@ class ProductMenu extends Component {
             );
           })}
         </div>
-        <div style={{ borderLeft: "1px solid gray", padding: "20px 0px" }}>
+        <div className="Menu">
           {/* Showing recommended menu list */}
           <div className="menu-category">
-            <h2 style={{ margin: 0, fontSize: "32px" }} id="Recommended">
-              Recommended
+            <h2 className="menu-category-title" id="Recommended">
+              Recommended{" "}
+              <span className="mobile-menu-category-item">
+                ({recommendedMenu.length})
+              </span>
             </h2>
-            <div
-              style={{
-                fontSize: "13px",
-                color: "rgb(104 107 120)",
-                marginTop: "5px",
-                fontWeight: 600,
-              }}
-            >
+            <div className="menu-category-item">
               {recommendedMenu.length} ITEM{recommendedMenu.length > 1 && "S"}
             </div>
           </div>
@@ -134,18 +130,11 @@ class ProductMenu extends Component {
             return (
               <div className="renderMenu" key={key}>
                 <div className="menu-category">
-                  <h2 style={{ margin: 0, fontSize: "32px" }} id={key}>
-                    {key}
+                  <h2 className="menu-category-title" id={key}>
+                    {key} ({value.length})
                   </h2>
-                  <div
-                    style={{
-                      fontSize: "13px",
-                      color: "rgb(104 107 120)",
-                      marginTop: "5px",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {value.length} ITEMS
+                  <div className="menu-category-item">
+                    {value.length} ITEM{value.length > 1 && "S"}
                   </div>
                 </div>
                 {value.map((data) => {
