@@ -11,17 +11,6 @@ class SignupPage extends React.Component {
     };
   }
 
-  submitLogin = () => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: null, password: null }),
-    };
-    fetch("https://food-power.glitch.me/login", requestOptions)
-      .then((response) => response.json())
-      .then((data) => this.setState({ loginToken: data.token }));
-  };
-
   render() {
     return (
       <div className="SignupPage">

@@ -1,9 +1,16 @@
 import React from "react";
 
-const ProductCategory = ({ menuCategory }) => {
+const ProductCategory = ({ menuCategory, topMargin }) => {
   return (
-    <div className="Product-cat">
-      <div>{menuCategory}</div>
+    <div
+      style={{
+        position: "sticky",
+        top: `${topMargin}px`,
+        display: "flex",
+        alignItems: "flex-end",
+      }}
+    >
+      <a href={`#${menuCategory}`}>{menuCategory}</a>
     </div>
   );
 };

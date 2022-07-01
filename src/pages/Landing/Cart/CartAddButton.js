@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../../Product/CartProvider";
-import "../../../Product/Product.css";
+import { CartContext } from "../../Product/CartProvider";
+import "../../Product/Product.css";
 
 const CartAddButton = (props) => {
-  const { menuPrice, menuName } = props;
+  const { menuPrice, menuName, restaurantInfo } = props;
   const { cart, updateCart } = useContext(CartContext);
 
   const increment = () => {
@@ -14,7 +14,7 @@ const CartAddButton = (props) => {
     } else {
       newCart.push({ menuName, menuPrice, quantity: 1 });
     }
-    updateCart({ items: newCart });
+    updateCart({ items: newCart, restaurantInfo: restaurantInfo });
   };
 
   const decrement = () => {
@@ -25,7 +25,7 @@ const CartAddButton = (props) => {
     } else if (newCart[newItemLoc].quantity > 1) {
       newCart[newItemLoc].quantity = cart.items[newItemLoc].quantity - 1;
     }
-    updateCart({ items: newCart });
+    updateCart({ items: newCart, restaurantInfo: restaurantInfo });
   };
 
   const { items } = cart;

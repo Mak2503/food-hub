@@ -5,6 +5,7 @@ const CartContext = createContext({});
 
 let defCart = {
   items: [],
+  restaurantInfo: {},
 };
 
 const CartProvider = (props) => {
@@ -24,8 +25,6 @@ const CartProvider = (props) => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
     const tokenData = JSON.parse(localStorage.getItem("tokenData"));
     const url = "https://food-power.glitch.me/cart";
-    console.log("cartItems", cart.items);
-    console.log("defcart", cartItems.items);
     fetch(`${url}/${cartId ? cartId : ""}`, {
       method: `${cartId ? "PUT" : "POST"}`,
       headers: {
@@ -36,7 +35,6 @@ const CartProvider = (props) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, res.cartid);
         setCartId(res.cartid);
       })
       .catch((err) => console.log(err));

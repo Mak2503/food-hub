@@ -1,15 +1,5 @@
-:root {
-    --primary-color: #fc8019;
-    --font: ProximaNova,Arial,Helvetica Neue,sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
 .SignupPage {
-    width: 600px;
-    font-family: var(--font);
+    width: 600px;    
     color: #282c3f;
     margin-left: 20px;
 }
@@ -27,7 +17,6 @@ body {
 }
 
 .SignupBox {
-    font-family: var(--font);
     position: relative;
 }
 
@@ -43,10 +32,6 @@ body {
     outline-width: 0px;
 }
 
-.SignupButton {
-    font-family: var(--font);
-}
-
 .SignupButton button {
     width: 60%;
     height: 70px;
@@ -56,4 +41,53 @@ body {
     color: white;
     cursor: pointer;
     margin: 15px 0;
+}
+
+.LoginErrMessage {
+    color: red;
+    font-size: large;
+    margin-top: 20px;
+  }
+
+@media only screen and (max-width: 500px){
+    .SignupPage {  
+        width: 100%;  
+        color: #282c3f;
+        margin: 0px;
+        padding: 15px;
+    }
+    .SignupPage h1, p {
+        margin: 5px 0px;
+    }
+    .SignupPage h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .SignupBox {
+        margin: 20px 0px;
+    }
+    .SignupBox input {
+        width: 90%;
+        height: 40px;
+        padding: 0px;
+        border: none;
+        font-size: 1rem;
+        border-bottom: 1px solid lightgrey;
+    }
+    .SignupButton button {
+        width: 90%;
+        height: 40px;
+        font-weight: bold;
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin: 15px 0;
+    }
+    .exit {
+        color: grey;
+        font-size: 24px;
+        margin: 0px;
+        margin-left: 5px;
+    }
 }

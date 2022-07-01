@@ -1,13 +1,135 @@
 .BodyGrid {
-    margin: 3.5rem;
-    display: grid;
-    grid-template-areas: 
-    "content content content content"
-    "content content content content"
-    "content content content content"
-    "content content content content"
-    ;
-    grid-template-columns: 296px 296px 296px 296px;
-    grid-template-rows: 345px 345px 345px 345px;
-    grid-gap: 15px;
+  width: fit-content;
+  margin: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:root {
+  --font: ProximaNova, Arial, Helvetica Neue, sans-serif;
+}
+
+.Restaurant-mobile {
+  display: none;
+}
+
+.Restaurant {
+  width: 296px;
+  height: 345px;
+  position: relative;
+  margin: 0px 5px;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+
+.Restaurant:hover {
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+}
+
+.resInner {
+  margin: 1rem;
+  font-family: var(--font);
+}
+
+.resName {
+  color: black;
+  height: 20px;
+  margin-bottom: 5px;
+  margin-top: 7.5px;
+  font-size: 17px;
+  word-break: break-word;
+}
+
+.resImg {
+  width: 100%;
+  height: 160px;
+}
+
+.resCuisines {
+  color: #535665;
+  font-size: 12px;
+  display: inline;
+}
+
+.resRatingGrid {
+  color: #535665;
+  font-size: 12px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resRating {
+  background-color: rgb(72 196 121);
+  padding: 2.5px 5px;
+  color: white;
+}
+
+.resCostForTwo {
+  color: #535665;
+  font-size: 12px;
+}
+
+.Body-header-mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 500px){
+  .BodyGrid {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
+  .Body-header-mobile {
+    display: block;
+  }
+  .Restaurant-mobile {
+    display: flex;
+    margin: 15px 0px;
+  }
+  .resName-mobile {
+    color: black;
+    margin: 0px;
+    margin-bottom: 3px;
+    font-size: 13px;
+    word-break: break-word;
+  }
+  .resCuisines-mobile {
+    color: #535665;
+    font-size: 11px;
+    height: 15px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+  .resRating-mobile {
+    background-color: rgb(72 196 121);
+    padding: 2px 5px;
+    font-size: 12px;
+    color: white;
+  }
+  .resCost-mobile {
+    width: 80%;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #535665;
+  }
+  .resImg-mobile {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  .Restaurant {
+    display: none;
+    width: 100%;
+    height: 180px;
+    position: relative;
+    border: 1px solid white;
+    transition: 0.3s;
+  }
+  .resImg {
+    width: 50%;
+    height: 70px;
+  }
 }
