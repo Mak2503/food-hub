@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignupBox = () => {
@@ -17,7 +16,6 @@ const SignupBox = () => {
       password: pwd,
       secret: "jsfac",
     };
-    console.log(signupData);
     fetch("https://food-power.glitch.me/sign-up", {
       method: "POST",
       headers: {
@@ -56,9 +54,9 @@ const SignupBox = () => {
         onChange={(e) => setPwd(e.target.value)}
       />
       <br />
-      <a href="/" style={{ color: "#5d8ed5" }}>
+      {/* <a href="/" style={{ color: "#5d8ed5" }}>
         Have a referral code?
-      </a>
+      </a> */}
       <div className="SignupButton">
         <button type="submit" onClick={() => handleSubmit()}>
           CONTINUE

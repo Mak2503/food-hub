@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::after ::before {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width: 626px) {
+  .Banner {
+    font-family: var(--font);
+    background-color: rgb(23 26 41);
+    color: white;
+    padding-top: 120px;
+    padding-bottom: 30px;
+    padding-left: 70px;
+    display: block;
+  }
+
+  .Banner-head {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .SearchBox {
+    color: #535665;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 45px;
+    margin-top: 16px;
+    padding: 0 20px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .SearchButton {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 45px;
+    width: 116px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .Banner {
+    font-family: var(--font);
+    background-color: rgb(23 26 41);
+    color: white;
+    width: 90%;
+    font-size: 13px;
+    overflow-wrap: break-word;
+    padding: 15px;
+    padding-top: 70px;
+  }
+
+  .Banner-head {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .Banner-text {
+    font-size: 11px;
+  }
+
+  .SearchBox {
+    color: #535665;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 90%;
+    margin-top: 16px;
+    padding: 0 10px;
+  }
+
+  .SearchText {
+    width: 80%;
+  }
+
+  .SearchButton {
+    display: none;
+  }
+}

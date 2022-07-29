@@ -8,25 +8,52 @@ body {
 }
 
 .Product {
+  overflow: hidden;
+  transition: 0.4s;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
+  height: 245px;
+}
+
+.Product-scrolled {
+  overflow: hidden;
+  transition: 0.4s;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 150px;
 }
 
 .Product-header {
-  width: 100%;
-  padding: 50px;
+  padding: 40px;
+  padding-left: 80px;
   background-color: #171a29;
   color: white;
-
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
+}
+
+.Product-header-scrolled {
+  padding: 25px;
+  padding-left: 80px;
+  background-color: #171a29;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 
 .Product-img img {
-  max-width: 70%;
-  height: 160px;
-  margin: auto;
+  height: 165px;
+  display: flex;
+  position: absolute;
+  top: 40px;
+}
+
+.Product-img-scrolled img {
+  width: 85%;
+  height: 100px;
+  object-fit: cover;
   display: flex;
 }
 
@@ -35,28 +62,38 @@ body {
   font-size: 1.8rem;
 }
 
+.Product-title-scrolled {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
 .Product-cuisines {
   font-size: 15px;
   color: gainsboro;
   margin: 15px 0px;
 }
 
+.Product-cuisines-scrolled {
+  display: none;
+}
+
 .Product-details {
   width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .Product-details div {
   display: flex;
+  flex-direction: column;
 }
 
-.Product-rating {
-  width: 33.33%;
+.Product-rating-scrolled {
+  display: none;
 }
 
 .Product-rating-msg {
-  width: 33.33%;
   font-size: 13px;
   margin-top: 8px;
 }
@@ -64,6 +101,11 @@ body {
 .ProductMenu {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.Menu {
+  border-left: 1px solid gray;
+  padding: 20px 0px;
 }
 
 .cart {
@@ -90,61 +132,20 @@ body {
   display: block;
 }
 
-.Menu {
-  max-width: 100%;
-  max-height: fit-content;
-  color: rgb(40 44 63);
-  letter-spacing: 1px;
-  margin: 3rem;
+.menu-category-title {
+  margin: 0px;
+  font-size: 32px;
 }
 
-.Menu-details {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.menu-img {
-  display: flex;
-  flex-direction: column;
-}
-
-.altImg {
-  background-color: #535665;
-  width: 130px;
-  height: 100px;
-  border-radius: 7px;
-  margin-top: 0;
-}
-
-.menu-img img {
-  width: 130px;
-  height: 100px;
-  border-radius: 7px;
-  margin-top: 0;
-}
-
-.menu-description {
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-price {
+.menu-category-item {
+  display: block;
   font-size: 13px;
-  font-weight: 700;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  color: rgb(104 107 120);
+  margin-top: 5px;
+  font-weight: 600;
 }
-
-.menu-des {
-  font-size: 13px;
-  color: rgb(40 44 63 / 45%);
-  margin: 1rem auto;
-}
-
-.menu-name {
-  font-weight: 800;
-  margin-top: 0;
+.mobile-menu-category-item {
+  display: none;
 }
 
 .menu-category {
@@ -156,16 +157,27 @@ body {
 .menu-category-list {
   display: flex;
   flex-direction: column;
+  font-size: 14px;
   margin-top: 20px;
   align-items: end;
 }
 
-.menu-category-block {
+.menu-category-list div a {
+  margin: 10px 20px;
+  text-decoration: none;
+  color: rgb(40 44 63);
+}
+
+.menu-category-list div a:hover {
+  color: #fc8019;
+}
+
+/* .menu-category-block {
   width: 5px;
   height: 20px;
   background-color: #fc8019;
   margin: 10px 0px;
-}
+} */
 
 .hr-line {
   display: block;
@@ -197,10 +209,117 @@ body {
 }
 
 .increment {
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .increment div {
   padding: 7px;
+}
+
+.SideCart {
+  padding: 20px;
+  position: sticky;
+  top: 270px;
+  color: #535665;
+}
+
+.SideCart-scrolled {
+  padding: 20px;
+  position: sticky;
+  top: 140px;
+  color: #535665;
+}
+
+.SideCart-head {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(40 44 63);
+}
+
+.SideCart-totalItem {
+  font-size: 13px;
+  color: #535665;
+}
+
+.SideCart-img {
+  width: 250px;
+  height: 170px;
+  background-image: url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 2rem auto;
+}
+
+.SideCart-button {
+  width: -webkit-fill-available;
+  height: 50px;
+  margin-top: 15px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 500px){
+  .menu-category-list, .SideCart, .SideCart-scrolled, .Product-img-scrolled img, .Product-img, .Product-rating-msg, .menu-category-item {
+    display: none;
+  }
+  .Product {
+    height: auto;
+  }
+  .Product-header {
+    padding: 10px;
+    padding-top: 25px;
+    display: block;
+  }
+  .Product-header-scrolled {
+    padding: 10px;
+    padding-top: 15px;
+    display: block;
+  }
+  .Product-content, .Product-details {
+    width: 100%;
+  }
+  .Product-details div {
+    font-size: 11px;
+  }
+  .Product-title, .Product-title-scrolled {
+    font-size: 1rem;
+  }
+  .Product-cuisines {
+    font-size: 10px;
+    margin: 5px 0px;
+  }
+  .Product-scrolled {
+    height: 3rem;
+  }
+  .ProductMenu {
+    display: block;
+  }
+  .Menu {
+    border: none;
+    margin: 10px;
+  }
+  .menu-category {
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+  .menu-category-title {
+    font-size: 15px;
+  }
+  .mobile-menu-category-item {
+    display: inline;
+  }
+  .AddButton {
+    width: 70px;
+    height: 25px;
+    font-size: 12px;
+    right: 16px;
+    border-radius: 5px;
+  }
+  .initial, .increment div {
+    padding-top: 5px;
+  }
 }

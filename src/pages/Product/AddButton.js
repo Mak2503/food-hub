@@ -4,7 +4,7 @@ import { CartContext } from "./CartProvider";
 import useLocalStorage from "../../libs/useLocalStorage";
 
 const AddButton = (props) => {
-  const { menuPrice, menuName } = props;
+  const { menuPrice, menuName, restaurantInfo } = props;
   const { cart, updateCart } = useContext(CartContext);
   const [tokenData, _] = useLocalStorage("tokenData");
 
@@ -16,7 +16,7 @@ const AddButton = (props) => {
     } else {
       newCart.push({ menuName, menuPrice, quantity: 1 });
     }
-    updateCart({ items: newCart });
+    updateCart({ items: newCart, restaurantInfo: restaurantInfo });
   };
 
   const decrement = () => {
@@ -27,7 +27,7 @@ const AddButton = (props) => {
     } else if (newCart[newItemLoc].quantity > 1) {
       newCart[newItemLoc].quantity = cart.items[newItemLoc].quantity - 1;
     }
-    updateCart({ items: newCart });
+    updateCart({ items: newCart, restaurantInfo: restaurantInfo });
   };
 
   const { items } = cart;
