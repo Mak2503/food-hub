@@ -1,4 +1,4 @@
 # Food Hub
-A Food ordering app which is based in Marathahalli, Bangalore explores the restaurants around the city with all the exciting food menu. Here you can order food, change quantity, and explore the cart for the checkout information.
+A Bangalore-based food ordering app that allows users to explore a variety of restaurants across the city. With this app, you can browse exciting food menus, adjust quantities, manage your cart, and proceed to a seamless checkout experience.
 
 
